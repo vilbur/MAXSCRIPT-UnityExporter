@@ -1,2 +1,3 @@
 *.bak
 .komodotools
+Test/UnityTestProject/*
