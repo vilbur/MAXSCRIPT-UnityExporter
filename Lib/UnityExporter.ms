@@ -1,8 +1,8 @@
 /** Unity exporter
  */
-struct UnityExporter_v
+struct UnityExporter_ue
 (
-	Dialog	= UnityExporterDialog_v(),
+	Dialog	= UnityExporterDialog_ue(),
 	
 
 	

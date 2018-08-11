@@ -1,14 +1,16 @@
 /** Unity exporter dialog
  */
-struct UnityExporterDialog_v
+struct UnityExporterDialog_ue
 (
 	Floater,
+	
 	rollouts = #(
-		"Paths",
-		"Manage",
-		"Export options",
-		"Node options",
-		"Export"
+		--"Paths",
+		--"Manage",
+		--"ExportOptions",
+		--"NodeOptions",
+		--"Export"
+		Paths_ue()
 	),
 	
 	/** Construct
@@ -21,10 +23,13 @@ struct UnityExporterDialog_v
 	 */
 	function create =
 	(
-		ini	= ( dotnetObject "System.Text.RegularExpressions.Regex" @"(ms|mscr)$" ).Replace (getSourceFileName()) "ini"
-		Floater	= (Floater_v ini:ini).new "Unity Exporter"
+		Floater	= (Floater_v()).new "Unity Exporter"
 		
-		Floater.create height:1280
+		Floater.Ini.dir  (getFilenamePath(getSourceFileName())+"..\..\\")
+		
+		this._createRollouts()
+		
+		Floater.create height:512
 	),
 	/*------------------------------------------------------------------------------
 		PRIVATE
@@ -33,7 +38,10 @@ struct UnityExporterDialog_v
 	 */
 	function _createRollouts =
 	(
-		
+		--for roll_name in rollouts do
+			--Floater.roll roll_name ""
+		for roll in rollouts do
+			roll.create Floater
 	),
 	
 	function test =
