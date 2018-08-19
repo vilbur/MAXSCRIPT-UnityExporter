@@ -1,1 +1,1 @@
-# UnityExporter
+# UnityExporter  ## Paths  Max scenes root  Export root  Export dir  Filename  Export path • full path to expoted file  ## Export FBX options  ## Exporter options  __Keep exported objects__  • Keep exported objects in layer "Exported-{exported_filename}"  __Rotate in world__ • Rotate Z axis, Front view in Max and Unity and thumbnail match correctly  ## Node options  
